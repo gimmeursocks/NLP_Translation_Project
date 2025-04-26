@@ -2,8 +2,12 @@ import tkinter as tk
 from tkinter import messagebox, ttk
 import requests
 
-GITHUB_TOKEN = "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"
+GITHUB_TOKEN = ""
 GIST_URL = "https://api.github.com/gists/16f74bf6e17c2641ab18fae28d3fc49b"
+
+with open("github_token", "r") as f:
+    for line in f:
+        GITHUB_TOKEN = line
 
 def get_kaggle_url():
     try:
